@@ -1,7 +1,7 @@
-function MealDetailsPage() {
+function MealDetailsPage({ params }) {
   return (
     <div>
-      <h1>Meal Details</h1>
+      <h1>{params.slug}</h1>
     </div>
   );
 }
