@@ -1,8 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { getMeal } from "@/lib/meals";
+import { notFound } from "next/navigation";
 function MealDetailsPage({ params }) {
   const meal = getMeal(params.slug);
+  if (!meal) {
+    notFound(); // Closest not-found page
+  }
 
   return (
     <>
